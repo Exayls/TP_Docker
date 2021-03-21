@@ -1,0 +1,10 @@
+nginxproxy:
+  image: jwilder/nginx-proxy
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock
+  ports:
+    - "8080:80"
+nginx:
+  image: nginx
+  environment:
+      - VIRTUAL_HOST=localhost
